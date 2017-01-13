@@ -1,0 +1,6 @@
+D:\上海宏谷\Framework\Aim.Component\bin\Debug\Aim.Component.dll
+D:\上海宏谷\Framework\Aim.Component\bin\Debug\Aim.Component.pdb
+D:\上海宏谷\Framework\Aim.Component\obj\Debug\Aim.Component.csproj.ResolveComReference.cache
+D:\上海宏谷\Framework\Aim.Component\obj\Debug\Aim.Component.dll
+D:\上海宏谷\Framework\Aim.Component\obj\Debug\Aim.Component.pdb
+D:\上海宏谷\Framework\Aim.Component\obj\Debug\Aim.Component.csprojResolveAssemblyReference.cache

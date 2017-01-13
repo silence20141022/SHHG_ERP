@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="SubmitNewEForm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eFormEntity" type="tns:ReceivedDocument" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReceivedDocument">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityObject">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ID" type="s1:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="Sender" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ReceivedDate" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="EntityObject" abstract="true">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:StructuralObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="EntityKey" type="tns:EntityKey" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="StructuralObject" abstract="true" />
+      <s:complexType name="EntityKey">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EntitySetName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityContainerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityKeyValues" type="tns:ArrayOfEntityKeyMember" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEntityKeyMember">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EntityKeyMember" nillable="true" type="tns:EntityKeyMember" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EntityKeyMember">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KeyValuePairOfStringObject" />
+      <s:element name="SubmitNewEFormResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubmitNewEFormResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitApprovalResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="workFlowDefineKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="workflowInstanceID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookmarkName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="approvalResult" type="tns:ApprovalResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ApprovalResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TaskId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ApprovalDateTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Opinion" type="tns:ApprovalOpinion" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovalNodeSkipInfoList" type="tns:ArrayOfApprovalNodeSkipInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExtendedProperties" type="tns:ArrayOfKeyValuePair_V2" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpecifiedApprovalNodeContexts" type="tns:ArrayOfApprovalNodeContext" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ApprovalOpinion">
+        <s:restriction base="s:string">
+          <s:enumeration value="拒绝" />
+          <s:enumeration value="同意" />
+          <s:enumeration value="签收确认" />
+          <s:enumeration value="超时" />
+          <s:enumeration value="系统取消" />
+          <s:enumeration value="NA" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfApprovalNodeSkipInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ApprovalNodeSkipInfo" nillable="true" type="tns:ApprovalNodeSkipInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ApprovalNodeSkipInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovalNodeContextName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CanBeSkipped" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfKeyValuePair_V2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="KeyValuePair_V2" nillable="true" type="tns:KeyValuePair_V2" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KeyValuePair_V2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfApprovalNodeContext">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ApprovalNodeContext" nillable="true" type="tns:ApprovalNodeContext" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ApprovalNodeContext">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="TaskGroupID" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Mode" type="tns:ApproverMode" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovalUnitContexts" type="tns:ArrayOfApprovalUnitContext" />
+          <s:element minOccurs="1" maxOccurs="1" name="CanBeSkipped" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="_DelaySpan" type="tns:TimeSpan" />
+          <s:element minOccurs="1" maxOccurs="1" name="MatchConditionType" type="tns:ApprovalNodeMatchConditionType" />
+          <s:element minOccurs="1" maxOccurs="1" name="CurrentApproverIndex" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DelaySpan" type="tns:TimeSpan" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ApproverMode">
+        <s:restriction base="s:string">
+          <s:enumeration value="串行" />
+          <s:enumeration value="并行" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfApprovalUnitContext">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ApprovalUnitContext" nillable="true" type="tns:ApprovalUnitContext" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ApprovalUnitContext">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Approver" type="tns:Approver" />
+          <s:element minOccurs="1" maxOccurs="1" name="CanBeSkipped" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SkipCondition" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Owner" type="tns:ApprovalNodeContext" />
+          <s:element minOccurs="1" maxOccurs="1" name="_DelaySpan" type="tns:TimeSpan" />
+          <s:element minOccurs="1" maxOccurs="1" name="TaskID" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="DelaySpan" type="tns:TimeSpan" />
+          <s:element minOccurs="0" maxOccurs="1" name="BookmarkName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Approver">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TimeSpan" />
+      <s:simpleType name="ApprovalNodeMatchConditionType">
+        <s:restriction base="s:string">
+          <s:enumeration value="必须全部同意" />
+          <s:enumeration value="一个同意即可" />
+          <s:enumeration value="有一个不同意则退出" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="SubmitApprovalResultResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTaskListByOwnerAndStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="owner" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="workItemStatus" type="tns:WorkItemStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="WorkItemStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="Assigned" />
+          <s:enumeration value="TimeOut" />
+          <s:enumeration value="Canceled" />
+          <s:enumeration value="Terminated" />
+          <s:enumeration value="Completed" />
+          <s:enumeration value="NA" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfTask">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Task" nillable="true" type="tns:Task" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Task">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityObject">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ID" type="s1:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Owner" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Action" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="WorkflowInstanceID" type="s1:guid" />
+              <s:element minOccurs="0" maxOccurs="1" name="EFormName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BookmarkName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CreatedTime" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="UpdatedTime" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Context" type="s:base64Binary" />
+              <s:element minOccurs="0" maxOccurs="1" name="ApprovalNodeName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="GroupID" type="s1:guid" />
+              <s:element minOccurs="1" maxOccurs="1" name="ApprovalNodeMatchConditionType" nillable="true" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetTaskListByOwnerAndStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTaskListByOwnerAndStatusResult" type="tns:ArrayOfTask" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEFormEntityByWorkflowInstanceID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="workflowInstanceID" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEFormEntityByWorkflowInstanceIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEFormEntityByWorkflowInstanceIDResult" type="tns:EntityObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartFlow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="formInstanceId" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="formUrl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="defineKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userNames" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartFlowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StartFlowResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SubmitNewEFormSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitNewEForm" />
+  </wsdl:message>
+  <wsdl:message name="SubmitNewEFormSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitNewEFormResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitApprovalResultSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitApprovalResult" />
+  </wsdl:message>
+  <wsdl:message name="SubmitApprovalResultSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitApprovalResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskListByOwnerAndStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTaskListByOwnerAndStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskListByOwnerAndStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTaskListByOwnerAndStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEFormEntityByWorkflowInstanceIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEFormEntityByWorkflowInstanceID" />
+  </wsdl:message>
+  <wsdl:message name="GetEFormEntityByWorkflowInstanceIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEFormEntityByWorkflowInstanceIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="StartFlowSoapIn">
+    <wsdl:part name="parameters" element="tns:StartFlow" />
+  </wsdl:message>
+  <wsdl:message name="StartFlowSoapOut">
+    <wsdl:part name="parameters" element="tns:StartFlowResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service_ReceivedDocumentSoap">
+    <wsdl:operation name="SubmitNewEForm">
+      <wsdl:input message="tns:SubmitNewEFormSoapIn" />
+      <wsdl:output message="tns:SubmitNewEFormSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitApprovalResult">
+      <wsdl:input message="tns:SubmitApprovalResultSoapIn" />
+      <wsdl:output message="tns:SubmitApprovalResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskListByOwnerAndStatus">
+      <wsdl:input message="tns:GetTaskListByOwnerAndStatusSoapIn" />
+      <wsdl:output message="tns:GetTaskListByOwnerAndStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEFormEntityByWorkflowInstanceID">
+      <wsdl:input message="tns:GetEFormEntityByWorkflowInstanceIDSoapIn" />
+      <wsdl:output message="tns:GetEFormEntityByWorkflowInstanceIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StartFlow">
+      <wsdl:input message="tns:StartFlowSoapIn" />
+      <wsdl:output message="tns:StartFlowSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service_ReceivedDocumentSoap" type="tns:Service_ReceivedDocumentSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SubmitNewEForm">
+      <soap:operation soapAction="http://tempuri.org/SubmitNewEForm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitApprovalResult">
+      <soap:operation soapAction="http://tempuri.org/SubmitApprovalResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskListByOwnerAndStatus">
+      <soap:operation soapAction="http://tempuri.org/GetTaskListByOwnerAndStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEFormEntityByWorkflowInstanceID">
+      <soap:operation soapAction="http://tempuri.org/GetEFormEntityByWorkflowInstanceID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartFlow">
+      <soap:operation soapAction="http://tempuri.org/StartFlow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service_ReceivedDocumentSoap12" type="tns:Service_ReceivedDocumentSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SubmitNewEForm">
+      <soap12:operation soapAction="http://tempuri.org/SubmitNewEForm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitApprovalResult">
+      <soap12:operation soapAction="http://tempuri.org/SubmitApprovalResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskListByOwnerAndStatus">
+      <soap12:operation soapAction="http://tempuri.org/GetTaskListByOwnerAndStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEFormEntityByWorkflowInstanceID">
+      <soap12:operation soapAction="http://tempuri.org/GetEFormEntityByWorkflowInstanceID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartFlow">
+      <soap12:operation soapAction="http://tempuri.org/StartFlow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service_ReceivedDocument">
+    <wsdl:port name="Service_ReceivedDocumentSoap" binding="tns:Service_ReceivedDocumentSoap">
+      <soap:address location="http://localhost:34214/Services/Service_ReceivedDocument.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service_ReceivedDocumentSoap12" binding="tns:Service_ReceivedDocumentSoap12">
+      <soap12:address location="http://localhost:34214/Services/Service_ReceivedDocument.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

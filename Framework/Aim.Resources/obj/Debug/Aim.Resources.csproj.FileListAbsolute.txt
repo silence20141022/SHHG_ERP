@@ -1,0 +1,4 @@
+D:\上海宏谷\Framework\Aim.Resources\bin\Debug\Aim.Resources.dll
+D:\上海宏谷\Framework\Aim.Resources\bin\Debug\Aim.Resources.pdb
+D:\上海宏谷\Framework\Aim.Resources\obj\Debug\Aim.Resources.dll
+D:\上海宏谷\Framework\Aim.Resources\obj\Debug\Aim.Resources.pdb

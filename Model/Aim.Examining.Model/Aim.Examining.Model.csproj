@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4F569840-B877-404A-BD1A-B3C2D966F042}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aim.Examining.Model</RootNamespace>
+    <AssemblyName>Aim.Examining.Model</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aim.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Aim.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.ActiveRecord, Version=2.1.2.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Framework\Aim.Resources\libs\Castle.ActiveRecord.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Framework\Aim.Resources\libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Framework\Aim.Resources\libs\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="PostSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Customed\ActualPayDetail.cs" />
+    <Compile Include="Customed\AssemblyOrDi.cs" />
+    <Compile Include="Customed\ChangeOrderPart.cs" />
+    <Compile Include="Customed\ChangeProduct.cs" />
+    <Compile Include="Customed\CollectionToUser.cs" />
+    <Compile Include="Customed\CombineSplit.cs" />
+    <Compile Include="Customed\CombineSplitDetail.cs" />
+    <Compile Include="Customed\Compressor.cs" />
+    <Compile Include="Customed\ContractMain.cs" />
+    <Compile Include="Customed\ContractMoney.cs" />
+    <Compile Include="Customed\CorrespondBill.cs" />
+    <Compile Include="Customed\Customer.cs" />
+    <Compile Include="Customed\DelieryOrderPart.cs" />
+    <Compile Include="Customed\DeliveryOrder.cs" />
+    <Compile Include="Customed\ExchangeRate.cs" />
+    <Compile Include="Customed\FeedBack.cs" />
+    <Compile Include="Customed\InAndOut.cs" />
+    <Compile Include="Customed\InAndOutDetail.cs" />
+    <Compile Include="Customed\InWarehouse.cs" />
+    <Compile Include="Customed\InWarehouseDetail.cs" />
+    <Compile Include="Customed\InWarehouseDetailDetail.cs" />
+    <Compile Include="Customed\Leave.cs" />
+    <Compile Include="Customed\Logistic.cs" />
+    <Compile Include="Customed\MessageDraft.cs" />
+    <Compile Include="Customed\MessageInfo.cs" />
+    <Compile Include="Customed\MessageToUser.cs" />
+    <Compile Include="Customed\MExamStardard.cs" />
+    <Compile Include="Customed\Notice.cs" />
+    <Compile Include="Customed\OrderDetail_FenGongSi.cs" />
+    <Compile Include="Customed\OrderInvoice.cs" />
+    <Compile Include="Customed\OrderInvoiceDetail.cs" />
+    <Compile Include="Customed\OrdersPart.cs" />
+    <Compile Include="Customed\Order_FenGongSi.cs" />
+    <Compile Include="Customed\OtherCost.cs" />
+    <Compile Include="Customed\OtherInWarehouseDetail.cs" />
+    <Compile Include="Customed\OtherPayBill.cs" />
+    <Compile Include="Customed\PayBill.cs" />
+    <Compile Include="Customed\PayBillDetail.cs" />
+    <Compile Include="Customed\PaymentInvoice.cs" />
+    <Compile Include="Customed\PriceApply.cs" />
+    <Compile Include="Customed\Product.cs" />
+    <Compile Include="Customed\ProductDetail.cs" />
+    <Compile Include="Customed\ProductPriceDetail.cs" />
+    <Compile Include="Customed\ProductsPart.cs" />
+    <Compile Include="Customed\PurchaseInvoice.cs" />
+    <Compile Include="Customed\PurchaseInvoiceDetail.cs" />
+    <Compile Include="Customed\PurchaseOrder.cs" />
+    <Compile Include="Customed\PurchaseOrderDetail.cs" />
+    <Compile Include="Customed\Reimbursement.cs" />
+    <Compile Include="Customed\ReturnOrder.cs" />
+    <Compile Include="Customed\ReturnOrderPart.cs" />
+    <Compile Include="Customed\SaleOrder.cs" />
+    <Compile Include="Customed\Section.cs" />
+    <Compile Include="Customed\SectionReadRole.cs" />
+    <Compile Include="Customed\Skin.cs" />
+    <Compile Include="Customed\StockCheck.cs" />
+    <Compile Include="Customed\StockCheckDetail.cs" />
+    <Compile Include="Customed\StockInfo.cs" />
+    <Compile Include="Customed\StockInventory.cs" />
+    <Compile Include="Customed\StockLog.cs" />
+    <Compile Include="Customed\Supplier.cs" />
+    <Compile Include="Customed\tblMail.cs" />
+    <Compile Include="Customed\tblProtal.cs" />
+    <Compile Include="Customed\TransactionHi.cs" />
+    <Compile Include="Customed\Travel.cs" />
+    <Compile Include="Customed\TreeTest.cs" />
+    <Compile Include="Customed\UserWage.cs" />
+    <Compile Include="Customed\Warehouse.cs" />
+    <Compile Include="Customed\WarehouseExchange.cs" />
+    <Compile Include="Customed\WarehouseExchangeDetail.cs" />
+    <Compile Include="Generated\ActualPayDetail.g.cs" />
+    <Compile Include="Generated\AssemblyOrDi.g.cs" />
+    <Compile Include="Generated\ChangeOrderPart.g.cs" />
+    <Compile Include="Generated\ChangeProduct.g.cs" />
+    <Compile Include="Generated\CollectionToUser.g.cs" />
+    <Compile Include="Generated\CombineSplit.g.cs" />
+    <Compile Include="Generated\CombineSplitDetail.g.cs" />
+    <Compile Include="Generated\Compressor.g.cs" />
+    <Compile Include="Generated\ContractMain.g.cs" />
+    <Compile Include="Generated\ContractMoney.g.cs" />
+    <Compile Include="Generated\CorrespondBill.g.cs" />
+    <Compile Include="Generated\Customer.g.cs" />
+    <Compile Include="Generated\DelieryOrderPart.g.cs" />
+    <Compile Include="Generated\DeliveryOrder.g.cs" />
+    <Compile Include="Generated\ExchangeRate.g.cs" />
+    <Compile Include="Generated\FeedBack.g.cs" />
+    <Compile Include="Generated\InAndOut.g.cs" />
+    <Compile Include="Generated\InAndOutDetail.g.cs" />
+    <Compile Include="Generated\InWarehouse.g.cs" />
+    <Compile Include="Generated\InWarehouseDetail.g.cs" />
+    <Compile Include="Generated\InWarehouseDetailDetail.g.cs" />
+    <Compile Include="Generated\Leave.g.cs" />
+    <Compile Include="Generated\Logistic.g.cs" />
+    <Compile Include="Generated\MessageDraft.g.cs" />
+    <Compile Include="Generated\MessageInfo.g.cs" />
+    <Compile Include="Generated\MessageToUser.g.cs" />
+    <Compile Include="Generated\Notice.g.cs" />
+    <Compile Include="Generated\OrderDetail_FenGongSi.g.cs" />
+    <Compile Include="Generated\OrderInvoice.g.cs" />
+    <Compile Include="Generated\OrderInvoiceDetail.g.cs" />
+    <Compile Include="Generated\OrdersPart.g.cs" />
+    <Compile Include="Generated\Order_FenGongSi.g.cs" />
+    <Compile Include="Generated\OtherCost.g.cs" />
+    <Compile Include="Generated\OtherInWarehouseDetail.g.cs" />
+    <Compile Include="Generated\OtherPayBill.g.cs" />
+    <Compile Include="Generated\PayBill.g.cs" />
+    <Compile Include="Generated\PayBillDetail.g.cs" />
+    <Compile Include="Generated\PaymentInvoice.g.cs" />
+    <Compile Include="Generated\PriceApply.g.cs" />
+    <Compile Include="Generated\Product.g.cs" />
+    <Compile Include="Generated\ProductDetail.g.cs" />
+    <Compile Include="Generated\ProductPriceDetail.g.cs" />
+    <Compile Include="Generated\ProductsPart.g.cs" />
+    <Compile Include="Generated\PurchaseInvoice.g.cs" />
+    <Compile Include="Generated\PurchaseInvoiceDetail.g.cs" />
+    <Compile Include="Generated\PurchaseOrder.g.cs" />
+    <Compile Include="Generated\PurchaseOrderDetail.g.cs" />
+    <Compile Include="Generated\Reimbursement.g.cs" />
+    <Compile Include="Generated\ReturnOrder.g.cs" />
+    <Compile Include="Generated\ReturnOrderPart.g.cs" />
+    <Compile Include="Generated\SaleOrder.g.cs" />
+    <Compile Include="Generated\Section.g.cs" />
+    <Compile Include="Generated\SectionReadRole.g.cs" />
+    <Compile Include="Generated\Skin.g.cs" />
+    <Compile Include="Generated\StockCheck.g.cs" />
+    <Compile Include="Generated\StockCheckDetail.g.cs" />
+    <Compile Include="Generated\StockInfo.g.cs" />
+    <Compile Include="Generated\StockInventory.g.cs" />
+    <Compile Include="Generated\StockLog.g.cs" />
+    <Compile Include="Generated\Supplier.g.cs" />
+    <Compile Include="Generated\tblMail.g.cs" />
+    <Compile Include="Generated\tblProtal.g.cs" />
+    <Compile Include="Generated\TransactionHi.g.cs" />
+    <Compile Include="Generated\Travel.g.cs" />
+    <Compile Include="Generated\TreeTest.g.cs" />
+    <Compile Include="Generated\UserWage.g.cs" />
+    <Compile Include="Generated\Warehouse.g.cs" />
+    <Compile Include="ExamModelBase.cs" />
+    <Compile Include="Generated\MExamStardard.g.cs" />
+    <Compile Include="Generated\WarehouseExchange.g.cs" />
+    <Compile Include="Generated\WarehouseExchangeDetail.g.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework\Aim.Portal\Aim.Portal.csproj">
+      <Project>{A19B8322-D5A3-42F7-A6AF-0C1B3B4DA7BD}</Project>
+      <Name>Aim.Portal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
