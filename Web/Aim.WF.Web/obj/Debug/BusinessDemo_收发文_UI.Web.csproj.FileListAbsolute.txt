@@ -1,0 +1,20 @@
+D:\LEO\Stuffs\IT Worker\_Test Code\Test Solution [WF 4.0]\Business Demos\BusinessDemo_收发文_UI.Web\bin\BusinessDemo_收发文_UI.Web.dll
+D:\LEO\Stuffs\IT Worker\_Test Code\Test Solution [WF 4.0]\Business Demos\BusinessDemo_收发文_UI.Web\bin\BusinessDemo_收发文_UI.Web.pdb
+D:\LEO\Stuffs\IT Worker\_Test Code\Test Solution [WF 4.0]\Business Demos\BusinessDemo_收发文_UI.Web\obj\Debug\ResolveAssemblyReference.cache
+D:\LEO\Stuffs\IT Worker\_Test Code\Test Solution [WF 4.0]\Business Demos\BusinessDemo_收发文_UI.Web\obj\Debug\BusinessDemo_收发文_UI.Web.dll
+D:\LEO\Stuffs\IT Worker\_Test Code\Test Solution [WF 4.0]\Business Demos\BusinessDemo_收发文_UI.Web\obj\Debug\BusinessDemo_收发文_UI.Web.pdb
+C:\Users\WangYu.GRAPECITY\Desktop\WF\BusinessDemo_收发文_UI.Web\bin\BusinessDemo_收发文_UI.Web.dll
+C:\Users\WangYu.GRAPECITY\Desktop\WF\BusinessDemo_收发文_UI.Web\bin\BusinessDemo_收发文_UI.Web.pdb
+C:\Users\WangYu.GRAPECITY\Desktop\WF\BusinessDemo_收发文_UI.Web\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\WangYu.GRAPECITY\Desktop\WF\BusinessDemo_收发文_UI.Web\obj\Debug\BusinessDemo_收发文_UI.Web.dll
+C:\Users\WangYu.GRAPECITY\Desktop\WF\BusinessDemo_收发文_UI.Web\obj\Debug\BusinessDemo_收发文_UI.Web.pdb
+C:\Users\WangYu.GRAPECITY\Desktop\WF\BusinessDemo_收发文_UI.Web\bin\EForm.EDM.dll
+C:\Users\WangYu.GRAPECITY\Desktop\WF\BusinessDemo_收发文_UI.Web\bin\EForm.EDM.pdb
+C:\Users\WangYu.GRAPECITY\Desktop\WF\BusinessDemo_收发文_UI.Web\bin\BusinessDemo_收发文_Model.dll
+C:\Users\WangYu.GRAPECITY\Desktop\WF\BusinessDemo_收发文_UI.Web\bin\BusinessDemo_收发文_WorkflowTemplates.dll
+C:\Users\WangYu.GRAPECITY\Desktop\WF\BusinessDemo_收发文_UI.Web\bin\EForm.WFCore.dll
+C:\Users\WangYu.GRAPECITY\Desktop\WF\BusinessDemo_收发文_UI.Web\bin\BusinessDemo_收发文_Model.pdb
+C:\Users\WangYu.GRAPECITY\Desktop\WF\BusinessDemo_收发文_UI.Web\bin\BusinessDemo_收发文_WorkflowTemplates.pdb
+C:\Users\WangYu.GRAPECITY\Desktop\WF\BusinessDemo_收发文_UI.Web\bin\EForm.WFCore.pdb
+C:\Users\WangYu.GRAPECITY\Desktop\WF\BusinessDemo_收发文_UI.Web\bin\BusinessDemo_收发文.dll
+C:\Users\WangYu.GRAPECITY\Desktop\WF\BusinessDemo_收发文_UI.Web\bin\BusinessDemo_收发文.pdb

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EFormModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="EFormModelStoreContainer">
+    <EntitySet Name="ReceivedDocument" EntityType="EFormModel.Store.ReceivedDocument" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="ReceivedDocument">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Sender" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="ReceivedDate" Type="date" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Content" Type="nvarchar" MaxLength="500" />
+    <Property Name="Comments" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+</Schema>
