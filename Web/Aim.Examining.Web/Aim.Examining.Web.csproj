@@ -25,6 +25,11 @@
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation />
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -4724,10 +4729,6 @@
     <Compile Include="PurchaseManagement\CombineSplitPrintContent.aspx.designer.cs">
       <DependentUpon>CombineSplitPrintContent.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PurchaseManagement\InWarehouseEdit.aspx.cs">
-      <DependentUpon>InWarehouseEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="PurchaseManagement\CombineSplitProductSelect.aspx.cs">
       <DependentUpon>CombineSplitProductSelect.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -7459,7 +7460,6 @@
     <Content Include="Modules\SysApp\OrgMag\UsrView.aspx" />
     <Content Include="PurchaseManagement\CombineSplitPrint.aspx" />
     <Content Include="PurchaseManagement\CombineSplitPrintContent.aspx" />
-    <Content Include="PurchaseManagement\InWarehouseEdit.aspx" />
     <Content Include="PurchaseManagement\logo2.jpg" />
     <Content Include="PurchaseManagement\CombineSplitProductSelect.aspx" />
     <Content Include="PurchaseManagement\OtherInWarehouseEdit.aspx" />

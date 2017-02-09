@@ -35,9 +35,10 @@
                 name: 'WarehouseName',
                 displayField: 'Name',
                 valueField: 'Name',
-                listeners: { select: function (combo, records, eOpts) {
-                    Ext.getCmp("WarehouseId").setValue(records[0].get("Id"));
-                }
+                listeners: {
+                    select: function (combo, records, eOpts) {
+                        Ext.getCmp("WarehouseId").setValue(records[0].get("Id"));
+                    }
                 }
             })
             var formpanel = Ext.create('Ext.form.Panel', {
@@ -55,28 +56,42 @@
                  { name: 'WarehouseId', hidden: true, id: 'WarehouseId' },
                  { name: 'SupplierId', hidden: true }
                 ],
-                buttons: [{ text: '保 存', hidden: op == 'view', handler: function () {
-                    if (formpanel.getForm().isValid()) {
-                        if (store_detail.data.length == 0) {
-                            Ext.MessageBox.alert('提示', '入库单明细不能为空!');
-                            return;
-                        }
-                        var detaildata = Ext.encode(Ext.pluck(grid_detail.store.data.items, 'data'));
-                        var action = PurchaseOrderIds ? "create" : "update";
-                        Ext.Ajax.request({
-                            url: 'InWarehouseEdit_New.aspx',
-                            params: { action: action, id: id, formdata: Ext.encode(formpanel.getForm().getValues()), detaildata: detaildata },
-                            success: function (response, opts) {
-                                Ext.MessageBox.alert('提示', '保存成功!', function () {
-                                    if (window.opener && window.opener.store) {
-                                        window.opener.store.load();
-                                    }
-                                    window.close();
-                                });
+                buttons: [{
+                    text: '保 存', hidden: op == 'view', handler: function () {
+                        if (formpanel.getForm().isValid()) {
+                            if (store_detail.data.length == 0) {
+                                Ext.MessageBox.alert('提示', '入库单明细不能为空!');
+                                return;
                             }
-                        })
+                            var isrepeate = false;
+                            //2017-2-9增加验证,入库单明细不能有相同的型号存在 by panhuaguo
+                            store_detail.each(function (record) {
+                                var recs = store_detail.query('ProductCode', record.get('ProductCode'))
+                                if (recs.length>1) {
+                                    isrepeate = true;
+                                }
+                            })
+                            if (isrepeate)
+                            {
+                                Ext.MessageBox.alert('提示', '入库单明细存在相同的产品型号!');
+                                return;
+                            }
+                            var detaildata = Ext.encode(Ext.pluck(grid_detail.store.data.items, 'data'));
+                            var action = PurchaseOrderIds ? "create" : "update";
+                            Ext.Ajax.request({
+                                url: 'InWarehouseEdit_New.aspx',
+                                params: { action: action, id: id, formdata: Ext.encode(formpanel.getForm().getValues()), detaildata: detaildata },
+                                success: function (response, opts) {
+                                    Ext.MessageBox.alert('提示', '保存成功!', function () {
+                                        if (window.opener && window.opener.store) {
+                                            window.opener.store.load();
+                                        }
+                                        window.close();
+                                    });
+                                }
+                            })
+                        }
                     }
-                }
                 }],
                 buttonAlign: 'center'
             })
@@ -95,10 +110,11 @@
             })
             var toolbar_detail = Ext.create('Ext.toolbar.Toolbar', {
                 items: [
-                { text: '删除', icon: '/images/shared/delete.gif', handler: function () {
-                    var recs = grid_detail.getSelectionModel().getSelection();
-                    store_detail.remove(recs);
-                }
+                {
+                    text: '删除', icon: '/images/shared/delete.gif', handler: function () {
+                        var recs = grid_detail.getSelectionModel().getSelection();
+                        store_detail.remove(recs);
+                    }
                 }]
             })
             var editor_detail = Ext.create('Ext.grid.plugin.CellEditing', {
@@ -122,12 +138,14 @@
                     { xtype: 'rownumberer', width: 25 },
                     { header: '采购编号', dataIndex: 'PurchaseOrderNo', width: 110 },
                     { header: '型号', dataIndex: 'ProductCode', width: 140 },
-                    { dataIndex: 'IQuantity', header: '数量', width: 60, editor: { xtype: 'numberfield', id: 'nf1', minValue: 1, allowBlank: false,
-                        maxText: '入库数量的最大值是{0}', msgTarget: 'under'
-                    }
+                    {
+                        dataIndex: 'IQuantity', header: '数量', width: 60, editor: {
+                            xtype: 'numberfield', id: 'nf1', minValue: 1, allowBlank: false,
+                            maxText: '入库数量的最大值是{0}', msgTarget: 'under'
+                        }
                     },
-		            { dataIndex: 'Remark', header: '备注', flex: 1, editor: { xtype: 'textarea'} }
-                    ]
+		            { dataIndex: 'Remark', header: '备注', flex: 1, editor: { xtype: 'textarea' } }
+                ]
             })
             var viewport = Ext.create('Ext.container.Viewport', {
                 layout: 'border',
@@ -150,8 +168,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    </div>
+        <div>
+        </div>
     </form>
 </body>
 </html>

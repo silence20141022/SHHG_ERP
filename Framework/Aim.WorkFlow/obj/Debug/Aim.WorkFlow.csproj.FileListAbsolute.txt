@@ -16,3 +16,12 @@ D:\上海宏谷\Framework\Aim.WorkFlow\bin\Debug\Aim.Component.pdb
 D:\上海宏谷\Framework\Aim.WorkFlow\obj\Debug\Aim.WorkFlow.dll
 D:\上海宏谷\Framework\Aim.WorkFlow\obj\Debug\Aim.WorkFlow.pdb
 D:\上海宏谷\Framework\Aim.WorkFlow\obj\Debug\Aim.WorkFlow.csprojResolveAssemblyReference.cache
+D:\SHHG_ERP\Framework\Aim.WorkFlow\bin\Debug\Aim.WorkFlow.dll.config
+D:\SHHG_ERP\Framework\Aim.WorkFlow\bin\Debug\Aim.WorkFlow.dll
+D:\SHHG_ERP\Framework\Aim.WorkFlow\bin\Debug\Aim.WorkFlow.pdb
+D:\SHHG_ERP\Framework\Aim.WorkFlow\bin\Debug\Aim.Component.dll
+D:\SHHG_ERP\Framework\Aim.WorkFlow\bin\Debug\Aim.Core.dll
+D:\SHHG_ERP\Framework\Aim.WorkFlow\bin\Debug\Aim.Component.pdb
+D:\SHHG_ERP\Framework\Aim.WorkFlow\obj\Debug\Aim.WorkFlow.csprojResolveAssemblyReference.cache
+D:\SHHG_ERP\Framework\Aim.WorkFlow\obj\Debug\Aim.WorkFlow.dll
+D:\SHHG_ERP\Framework\Aim.WorkFlow\obj\Debug\Aim.WorkFlow.pdb
