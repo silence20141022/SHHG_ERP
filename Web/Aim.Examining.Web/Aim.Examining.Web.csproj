@@ -3737,6 +3737,8 @@
     <Content Include="NewFinance\CustomerPay_UnInvoice.aspx" />
     <Content Include="NewFinance\ManualPayoffInvoice.aspx" />
     <Content Include="NewFinance\UnInvoiceOrderList.aspx" />
+    <Content Include="PurchaseManagement\InWarehouseEdit.aspx" />
+    <Content Include="PurchaseManagement\logo1.jpg" />
     <Content Include="ShouJuYingShou.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -4032,6 +4034,10 @@
     </Compile>
     <Compile Include="NewFinance\UnInvoiceOrderList.aspx.designer.cs">
       <DependentUpon>UnInvoiceOrderList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseManagement\InWarehouseEdit.aspx.cs">
+      <DependentUpon>InWarehouseEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="YingShouDetail.aspx.cs">
       <DependentUpon>YingShouDetail.aspx</DependentUpon>
