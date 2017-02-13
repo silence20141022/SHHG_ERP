@@ -3737,7 +3737,6 @@
     <Content Include="NewFinance\CustomerPay_UnInvoice.aspx" />
     <Content Include="NewFinance\ManualPayoffInvoice.aspx" />
     <Content Include="NewFinance\UnInvoiceOrderList.aspx" />
-    <Content Include="PurchaseManagement\InWarehouseEdit.aspx" />
     <Content Include="PurchaseManagement\logo1.jpg" />
     <Content Include="ShouJuYingShou.aspx" />
   </ItemGroup>
@@ -4034,10 +4033,6 @@
     </Compile>
     <Compile Include="NewFinance\UnInvoiceOrderList.aspx.designer.cs">
       <DependentUpon>UnInvoiceOrderList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PurchaseManagement\InWarehouseEdit.aspx.cs">
-      <DependentUpon>InWarehouseEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="YingShouDetail.aspx.cs">
       <DependentUpon>YingShouDetail.aspx</DependentUpon>
@@ -8043,7 +8038,9 @@
     <Content Include="StockManagement\WarehouseExchangeEdit.aspx" />
     <Content Include="StockManagement\WarehouseExchangeList.aspx" />
     <Content Include="StockManagement\WarehouseExchangeView.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="WordTemplates\Deliveryorder.doc" />
     <None Include="WordTemplates\order.doc" />
     <Content Include="bin\Aim.Portal.ServicesProvider.pdb" />

@@ -36,13 +36,7 @@ namespace Aim.Examining.Web.PurchaseManagement
                 iwEnt = InWarehouse.Find(id);
             }
             switch (action)
-            {
-                case "loadwarehouse":
-                    sql = "select Id ,Name from SHHG_AimExamine..Warehouse";
-                    dt = DataHelper.QueryDataTable(sql);
-                    Response.Write("{rows:" + JsonHelper.GetJsonStringFromDataTable(dt) + "}");
-                    Response.End();
-                    break;
+            { 
                 case "loaddetail":
                     if (!string.IsNullOrEmpty(PurchaseOrderIds))
                     {

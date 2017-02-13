@@ -14,22 +14,15 @@
         var op = getQueryString("op");
         Ext.onReady(function () {
             var store_warehouse = Ext.create('Ext.data.JsonStore', {
-                fields: ['Id', 'Name'],
-                proxy: {
-                    url: 'InWarehouseEdit_New.aspx?action=loadwarehouse',
-                    type: 'ajax',
-                    reader: {
-                        type: 'json',
-                        root: 'rows'
-                    }
-                },
-                autoLoad: true
+                fields: ['Id', 'Name'], 
+                data: [{ Id: '7b0e328b-cc2b-4f69-ab63-8bbff4fe27d9', Name: '宏谷仓库' }, { Id: '9999ad1a-3de0-4771-a94b-2f82a0535939', Name: '全谷仓库' }]
             })
             var combo_warehouse = Ext.create('Ext.form.field.ComboBox', {
                 store: store_warehouse,
                 fieldLabel: '入库仓库',
                 labelAlign: 'right',
                 allowBlank: false,
+                queryMode: 'local',
                 msgTarget: 'under',
                 blankText: '入库仓库不能为空!',
                 name: 'WarehouseName',
@@ -67,12 +60,11 @@
                             //2017-2-9增加验证,入库单明细不能有相同的型号存在 by panhuaguo
                             store_detail.each(function (record) {
                                 var recs = store_detail.query('ProductCode', record.get('ProductCode'))
-                                if (recs.length>1) {
+                                if (recs.length > 1) {
                                     isrepeate = true;
                                 }
                             })
-                            if (isrepeate)
-                            {
+                            if (isrepeate) {
                                 Ext.MessageBox.alert('提示', '入库单明细存在相同的产品型号!');
                                 return;
                             }
@@ -137,7 +129,7 @@
                 columns: [
                     { xtype: 'rownumberer', width: 25 },
                     { header: '采购编号', dataIndex: 'PurchaseOrderNo', width: 110 },
-                    { header: '型号', dataIndex: 'ProductCode', width: 140 },
+                    { header: '型号', dataIndex: 'ProductCode', width: 300 },
                     {
                         dataIndex: 'IQuantity', header: '数量', width: 60, editor: {
                             xtype: 'numberfield', id: 'nf1', minValue: 1, allowBlank: false,

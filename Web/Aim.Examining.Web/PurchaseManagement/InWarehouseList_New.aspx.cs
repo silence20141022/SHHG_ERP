@@ -50,20 +50,11 @@ namespace Aim.Examining.Web.PurchaseManagement
                     {
                         where += " and Id in (select distinct InWarehouseId from SHHG_AimExamine..InWarehouseDetail where  ProductCode like '%" + Request["ProductCode"] + "%')";
                     }
-                    sql = "select * from SHHG_AimExamine..InWarehouse where 1=1 " + where;
+                    sql = "select * from SHHG_AimExamine..InWarehouse where InWarehouseType ='采购入库' " + where;
                     dt = DataHelper.QueryDataTable(GetPageSql(sql));
                     Response.Write("{total:" + totalProperty + ",rows:" + JsonHelper.GetJsonStringFromDataTable(dt) + "}");
                     Response.End();
-                    break;
-                case "loaddetail":
-                    sql = @"select a.*,c.PurchaseOrderNo from SHHG_AimExamine..InWarehouseDetail a 
-                          left join SHHG_AimExamine..PurchaseOrderDetail b on a.PurchaseOrderDetailId=b.Id
-                          left join SHHG_AimExamine..PurchaseOrder c on b.PurchaseOrderId=c.Id
-                          where a.InWarehouseId='" + id + "' order by a.ProductCode asc";
-                    dt = DataHelper.QueryDataTable(sql);
-                    Response.Write("{innerrows:" + JsonHelper.GetJsonStringFromDataTable(dt) + "}");
-                    Response.End();
-                    break;
+                    break;  
                 case "delete":
                     if (!string.IsNullOrEmpty(id))
                     {

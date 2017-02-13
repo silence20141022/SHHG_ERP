@@ -41,15 +41,7 @@ D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Aim.Resources.dll
 D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Aim.WorkFlow.dll
 D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Aspose.Cells.dll
 D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Goodway.Data.dll
-D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Castle.Components.Validator.dll
-D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Castle.Core.dll
-D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Iesi.Collections.dll
-D:\SHHG_ERP\Web\Aim.Examining.Web\bin\NHibernate.ByteCode.Castle.dll
-D:\SHHG_ERP\Web\Aim.Examining.Web\bin\NHibernate.Search.dll
-D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Antlr3.Runtime.dll
 D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Goodway.Public.dll
-D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Castle.DynamicProxy2.dll
-D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Lucene.Net.dll
 D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Aim.Component.pdb
 D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Aim.Portal.ServicesProvider.pdb
 D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Aim.Portal.pdb
@@ -61,3 +53,11 @@ D:\SHHG_ERP\Web\Aim.Examining.Web\obj\Debug\Aim.Examining.Web.csprojResolveAssem
 D:\SHHG_ERP\Web\Aim.Examining.Web\obj\Debug\Aim.Examining.Web.csproj.ResolveComReference.cache
 D:\SHHG_ERP\Web\Aim.Examining.Web\obj\Debug\Aim.Examining.Web.dll
 D:\SHHG_ERP\Web\Aim.Examining.Web\obj\Debug\Aim.Examining.Web.pdb
+D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Castle.Components.Validator.dll
+D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Castle.Core.dll
+D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Iesi.Collections.dll
+D:\SHHG_ERP\Web\Aim.Examining.Web\bin\NHibernate.ByteCode.Castle.dll
+D:\SHHG_ERP\Web\Aim.Examining.Web\bin\NHibernate.Search.dll
+D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Antlr3.Runtime.dll
+D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Castle.DynamicProxy2.dll
+D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Lucene.Net.dll
