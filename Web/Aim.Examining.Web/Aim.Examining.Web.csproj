@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -30,6 +30,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,6 +42,7 @@
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -50,9 +52,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Aim.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Aim.Portal.Services, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Aim.Portal.Services\obj\Debug\Aim.Portal.Services.dll</HintPath>
+    </Reference>
     <Reference Include="Aspose.Cells, Version=7.5.3.0, Culture=neutral, PublicKeyToken=00725b1ceb58d0a9, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\Aspose.Cells.dll</HintPath>
@@ -80,43 +87,47 @@
       <HintPath>..\..\lib\System.ComponentModel.Composition.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Runtime.Serialization">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.ServiceModel">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Web.Extensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="Telerik.Web.UI, Version=2008.1.415.20, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Telerik.Web.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BaseInfo\customeredit.aspx" />
+    <Content Include="BaseInfo\customerlist.aspx" />
     <Content Include="BaseInfo\FileList.aspx" />
+    <Content Include="BaseInfo\FrmCustomersList.aspx" />
     <Content Include="BaseInfo\ProductPrice.aspx" />
     <Content Include="bin\Telerik.Charting.dll" />
     <Content Include="bin\Telerik.Charting.xml" />
     <Content Include="bin\Telerik.Web.UI.dll" />
     <Content Include="bin\Telerik.Web.UI.xml" />
+    <Content Include="bootstrap-3.3.7-dist\css\bootstrap-theme.css" />
+    <Content Include="bootstrap-3.3.7-dist\css\bootstrap-theme.min.css" />
+    <Content Include="bootstrap-3.3.7-dist\css\bootstrap.css" />
+    <Content Include="bootstrap-3.3.7-dist\css\bootstrap.min.css" />
+    <Content Include="bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="bootstrap-3.3.7-dist\js\bootstrap.js" />
+    <Content Include="bootstrap-3.3.7-dist\js\bootstrap.min.js" />
+    <Content Include="bootstrap-3.3.7-dist\js\npm.js" />
     <Content Include="echarts\build\dist\chart\bar.js" />
     <Content Include="echarts\build\dist\chart\chord.js" />
     <Content Include="echarts\build\dist\chart\eventRiver.js" />
@@ -3741,6 +3752,20 @@
     <Content Include="ShouJuYingShou.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseInfo\customeredit.aspx.cs">
+      <DependentUpon>customeredit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\customeredit.aspx.designer.cs">
+      <DependentUpon>customeredit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\customerlist.aspx.cs">
+      <DependentUpon>customerlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\customerlist.aspx.designer.cs">
+      <DependentUpon>customerlist.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BaseInfo\FileList.aspx.cs">
       <DependentUpon>FileList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3752,16 +3777,16 @@
       <DependentUpon>FrmCustomersEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="BaseInfo\FrmCustomersList.aspx.cs">
-      <DependentUpon>FrmCustomersList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="BaseInfo\FrmCustomer.aspx.cs">
       <DependentUpon>FrmCustomer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="BaseInfo\FrmCustomer.aspx.designer.cs">
       <DependentUpon>FrmCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\FrmCustomersList.aspx.cs">
+      <DependentUpon>FrmCustomersList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="BaseInfo\FrmProductWarn.aspx.cs">
       <DependentUpon>FrmProductWarn.aspx</DependentUpon>
@@ -3995,6 +4020,8 @@
     <Compile Include="CommonPages\Select\WarehouseExchangeProductSelect.aspx.designer.cs">
       <DependentUpon>WarehouseExchangeProductSelect.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Common\Common.cs" />
+    <Compile Include="Common\DbMgr.cs" />
     <Compile Include="FinanceManagement\SaleCorrespondList.aspx.cs">
       <DependentUpon>SaleCorrespondList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -5613,10 +5640,6 @@
     <ProjectReference Include="..\..\Model\Aim.Examining.Model\Aim.Examining.Model.csproj">
       <Project>{4F569840-B877-404A-BD1A-B3C2D966F042}</Project>
       <Name>Aim.Examining.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Aim.Portal.Services\Aim.Portal.Services.csproj">
-      <Project>{516E8FC3-EF4F-4BD6-88EE-E6A429587C8A}</Project>
-      <Name>Aim.Portal.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -7264,7 +7287,6 @@
     <Content Include="App_Themes\Default\jquery-ui-1.8\redmond.css" />
     <Content Include="App_Themes\Ext\IE9Fix.css" />
     <Content Include="BaseInfo\FrmCustomersEdit.aspx" />
-    <Content Include="BaseInfo\FrmCustomersList.aspx" />
     <Content Include="BaseInfo\FrmCustomer.aspx" />
     <Content Include="BaseInfo\FrmProductWarn.aspx" />
     <Content Include="BaseInfo\FrmTransactionHisDetail.aspx" />
@@ -7480,6 +7502,14 @@
     <Content Include="bin\Aim.Portal.Services.dll" />
     <Content Include="bin\Aim.Portal.Services.pdb" />
     <Content Include="bin\Aim.Portal.ServicesProvider.dll" />
+    <Content Include="bootstrap-3.3.7-dist\css\bootstrap-theme.css.map" />
+    <Content Include="bootstrap-3.3.7-dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="bootstrap-3.3.7-dist\css\bootstrap.css.map" />
+    <Content Include="bootstrap-3.3.7-dist\css\bootstrap.min.css.map" />
+    <Content Include="bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="echarts\.editorconfig" />
     <None Include="echarts\.gitignore" />
     <None Include="echarts\.jshintignore" />

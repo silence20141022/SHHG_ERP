@@ -53,8 +53,9 @@ namespace Aim.Examining.Web.SaleManagement
                 }
             }
             string userid = Aim.Portal.Web.WebPortalService.CurrentUserInfo.UserID;
-            if (userid == "97968039-a657-467b-b735-04dab4a9b60c" || userid == "c7712e33-2b20-463e-8910-8f234cf260ef" || userid == "46c5f4df-f6d1-4b36-96ac-d39d3dd65a5d" || userid == "7580578a-ce30-47ef-9a7e-95ca8ac97df3")
-            {
+            //2017-07-21 新增用户 f54d92c5-6b98-4120-8c5d-9b770125a0e5 沈艳霞
+            if (userid == "97968039-a657-467b-b735-04dab4a9b60c" || userid == "c7712e33-2b20-463e-8910-8f234cf260ef" || userid == "46c5f4df-f6d1-4b36-96ac-d39d3dd65a5d" || userid == "7580578a-ce30-47ef-9a7e-95ca8ac97df3" || userid == "f54d92c5-6b98-4120-8c5d-9b770125a0e5")
+            { 
                 where += "";
             }
             else

@@ -52,18 +52,19 @@ function getPageState() {
 // 清理iframe防止内存泄漏
 function unloadPage() {
     var innerFrames = document.frames;
+    if (innerFrames.length) {
+        for (var i = 0; i < innerFrames.length; i++) {
+            try {
+                if (innerFrames[i].UnloadPage) {
+                    innerFrames[i].UnloadPage();
+                }
 
-    for (var i = 0; i < innerFrames.length; i++) {
-        try {
-            if (innerFrames[i].UnloadPage) {
-                innerFrames[i].UnloadPage();
-            }
+                innerFrames[i].document.write("");
+                innerFrames[i].document.clear();
+            } catch (e) { }
+        }
 
-            innerFrames[i].document.write("");
-            innerFrames[i].document.clear();
-        } catch (e) { }
     }
-
     try {
         CollectGarbage();
     } catch (e) { }

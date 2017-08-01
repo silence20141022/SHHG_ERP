@@ -15,6 +15,7 @@ using Aim.Portal.Model;
 using Aim.Examining.Model;
 using System.Web.Script.Serialization;
 using System.Configuration;
+using System.Data;
 
 namespace Aim.Examining.Web.StockManagement
 {
@@ -131,6 +132,8 @@ namespace Aim.Examining.Web.StockManagement
 
                                 ProcessSkin(objL.Value<string>("SkinArray"), objL.Value<string>("ISBN"), iwEnt.Id);
                                 ProcessCompressor(objL.Value<string>("SeriesArray"), objL.Value<string>("ISBN"), iwEnt.Id);
+                                processremark(objL.Value<string>("Remark"), objL.Value<string>("ISBN"), iwEnt.Id);
+
                                 //如果实际入库数量和未入库的数量相等 则入库状态为已入库
                                 if (objL.Value<string>("ActuallyQuantity") == objL.Value<string>("NoIn"))
                                 {
@@ -165,9 +168,11 @@ namespace Aim.Examining.Web.StockManagement
                                 }
                                 else//如果未入库的数量不等于现在输入的数量。只更新包装和压缩机序列号集合
                                 {
+                                 
                                     if (iwEnt.InWarehouseType == "采购入库")
                                     {
                                         InWarehouseDetail iwdEnt = InWarehouseDetail.Find(objL.Value<string>("Id"));
+                                        iwdEnt.Remark = objL.Value<string>("Remark");
                                         if (!string.IsNullOrEmpty(objL.Value<string>("SkinArray")))
                                         {
                                             iwdEnt.SkinArray = objL.Value<string>("SkinArray").ToString();
@@ -181,6 +186,7 @@ namespace Aim.Examining.Web.StockManagement
                                     else
                                     {
                                         OtherInWarehouseDetail oiwdEnt = OtherInWarehouseDetail.Find(objL.Value<string>("Id"));
+                                        oiwdEnt.Remark = objL.Value<string>("Remark");
                                         if (!string.IsNullOrEmpty(objL.Value<string>("SkinArray")))
                                         {
                                             oiwdEnt.SkinArray = objL.Value<string>("SkinArray").ToString();
@@ -269,6 +275,47 @@ namespace Aim.Examining.Web.StockManagement
                     }
                 }
 
+            }
+        }
+        public void processremark(string remark, string modelno, string inWarehouseId)
+        {
+            //格式  箱号@序列号#箱号@序列号
+            string sql = string.Empty;
+            DataTable dt_c = null;
+            DataTable dt_s = null;
+            int quan_c = 0;
+            if (!string.IsNullOrEmpty(remark))
+            {
+                string[] skinarr = remark.Split(new string[] { "#" }, StringSplitOptions.RemoveEmptyEntries);
+                foreach (string skin in skinarr)
+                {
+                    //  [)>06PVR54KSTFP54ES17FM3608ZS17FM3609ZS17FM3610ZS17FM3611ZS17FM3612ZS17FM3613ZS17FM3614ZS17FM3615ZS17FM3616ZS17FM3621ZS17FM3624ZS17FM3630ZS17FM3631ZS17FM3646ZS17FM3647ZS17FM3655Z
+                    string[] tmparr = skin.Split(new string[] { "@" }, StringSplitOptions.RemoveEmptyEntries);
+                    sql = "select * from SHHG_AimExamine..skin where skinno='" + tmparr[0] + "'";
+                    dt_s = DataHelper.QueryDataTable(sql);
+                    if (dt_s.Rows.Count > 0)
+                    {
+                        string[] seriesnoarr = tmparr[1].Split(new string[] { "S1" }, StringSplitOptions.RemoveEmptyEntries);
+                        for (int i = 1; i < seriesnoarr.Length; i++)//不从第一个循环，因为第一个不是箱号
+                        {
+                            sql = "select * from SHHG_AimExamine..compressor where SeriesNo='" + seriesnoarr[i] + "'";
+                            dt_c = DataHelper.QueryDataTable(sql);
+                            if (dt_c.Rows.Count == 0)
+                            {
+                                sql = @"insert into SHHG_AimExamine..Compressor (Id,SeriesNo,SkinId,modelno,CreateId,CreateName,CreateTime,State,InWarehouseId) values 
+                                      (NEWID(),'" + seriesnoarr[i] + "','" + dt_s.Rows[0]["Id"] + "','" + modelno + "','" + UserInfo.UserID + "','" + UserInfo.Name + "',GETDATE(),'未出库','" + inWarehouseId + "')";
+                                DataHelper.ExecSql(sql);
+                            }
+                        }
+                        sql = "select count(1) from SHHG_AimExamine..Compressor where skinid='" + dt_s.Rows[0]["Id"] + "'";
+                        quan_c = DataHelper.QueryValue<int>(sql);
+                        if (quan_c + "" == dt_s.Rows[0]["Quantity"] + "")
+                        {
+                            sql = "update SHHG_AimExamine..skin set SkinState='满箱' where Id='" + dt_s.Rows[0]["Id"] + "'";
+                            DataHelper.ExecSql(sql);
+                        }
+                    }
+                }
             }
         }
         private void InStorage(string proId, int iQuan, string warehouseId)

@@ -35,7 +35,6 @@ D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Aim.Examining.Web.pdb
 D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Aim.Component.dll
 D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Aim.Examining.Model.dll
 D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Aim.Portal.dll
-D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Aim.Portal.Services.dll
 D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Aim.Portal.ServicesProvider.dll
 D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Aim.Resources.dll
 D:\SHHG_ERP\Web\Aim.Examining.Web\bin\Aim.WorkFlow.dll

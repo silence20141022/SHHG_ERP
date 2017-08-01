@@ -34,8 +34,8 @@ namespace Aim.Examining.Web
             log4net.Config.XmlConfigurator.Configure();
 
             //日志、异常
-            LogAttribute.del += WriteLog;
-            ExceptionAttribute.del += WriteLog;
+            //LogAttribute.del += WriteLog;
+            //ExceptionAttribute.del += WriteLog;
 
             //检验序列号是否有效
             //CheckSystemValid();

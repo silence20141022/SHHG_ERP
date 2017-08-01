@@ -85,7 +85,7 @@ namespace Aim.Examining.Web
                     PageState.Add("MagUser", customer.MagUser);
                     PageState.Add("MagId", customer.MagId);
                     PageState.Add("Address", customer.Address);
-                    PageState.Add("Tel", customer.Tel);
+                   // PageState.Add("Tel", customer.Tel);
                     PageState.Add("Code", customer.Code);
                 }
             }
