@@ -391,8 +391,8 @@
                 val = val.trim().toUpperCase();
                 //2017-07-31 新增代码start 
                 //处理二维码的扫描所1数量和箱号之间的分隔是1J 2有序列号都是以S作为分隔
-                //demo1 )>061PVR54KS-TFP-54EQ161JF56A867ZWU94612 
-                if (val.indexOf(')>061P') >= 0)//如果是扫描二维码进来的
+                //demo1 [)>061PVR54KS-TFP-54EQ161JF56A867ZWU94612 
+                if (val.indexOf('[)>061P') >= 0)//如果是扫描二维码进来的
                 {
                     qrcode = true;
                     // var start=val.indexOf(')>061P');
@@ -400,8 +400,8 @@
                     var end2 = val.indexOf('1J', end);
                     var quantity = val.substring(end + 1, end2);
                     skinno = val.substring(end2 + 2, end2 + 10);
-                    val = val.substring(6, end);
-                    //alert(skinno); alert(quantity);
+                    val = val.substring(7, end);
+                    //alert(val); alert(quantity);alert(skinno)
                     var index = store.findExact('Code', val);
                     cur_rec = store.getAt(index);
                     cur_rec.set("ActuallyQuantity", FloatAdd(cur_rec.get("ActuallyQuantity"), quantity));

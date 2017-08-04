@@ -132,7 +132,7 @@ namespace Aim.Examining.Web.StockManagement
 
                                 ProcessSkin(objL.Value<string>("SkinArray"), objL.Value<string>("ISBN"), iwEnt.Id);
                                 ProcessCompressor(objL.Value<string>("SeriesArray"), objL.Value<string>("ISBN"), iwEnt.Id);
-                                processremark(objL.Value<string>("Remark"), objL.Value<string>("ISBN"), iwEnt.Id);
+                                processremark(objL.Value<string>("Remark"), objL.Value<string>("ISBN"), iwEnt.Id, objL.Value<string>("Code"));
 
                                 //如果实际入库数量和未入库的数量相等 则入库状态为已入库
                                 if (objL.Value<string>("ActuallyQuantity") == objL.Value<string>("NoIn"))
@@ -277,7 +277,7 @@ namespace Aim.Examining.Web.StockManagement
 
             }
         }
-        public void processremark(string remark, string modelno, string inWarehouseId)
+        public void processremark(string remark, string modelno, string inWarehouseId,string productcode)
         {
             //格式  箱号@序列号#箱号@序列号
             string sql = string.Empty;
@@ -295,7 +295,7 @@ namespace Aim.Examining.Web.StockManagement
                     dt_s = DataHelper.QueryDataTable(sql);
                     if (dt_s.Rows.Count > 0)
                     {
-                        string[] seriesnoarr = tmparr[1].Split(new string[] { "S1" }, StringSplitOptions.RemoveEmptyEntries);
+                        string[] seriesnoarr = tmparr[1].Replace(productcode,"").Replace(modelno,"").Split(new string[] { "S" }, StringSplitOptions.RemoveEmptyEntries);
                         for (int i = 1; i < seriesnoarr.Length; i++)//不从第一个循环，因为第一个不是箱号
                         {
                             sql = "select * from SHHG_AimExamine..compressor where SeriesNo='" + seriesnoarr[i] + "'";
