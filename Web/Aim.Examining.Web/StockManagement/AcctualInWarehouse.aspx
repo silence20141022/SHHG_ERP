@@ -287,12 +287,15 @@
                             if (val != array[0] && val != array[1]) {//判断是否重复扫描了前面的参数
                                 if (qrcode)//如果第一步扫描的是二维码
                                 {
+                                    val = val.trim().toUpperCase();
                                     if (val.indexOf('[)>06P') >= 0) {//判定一下第二次确实是扫描的序列号
                                         //var index = store.findExact('Code', array[0]);
                                         //var rec = store.getAt(index);
                                         AddScanLog("扫描压缩机序列号：" + val)
                                         cur_rec.set("Remark", cur_rec.get("Remark") + "#" + skinno + "@" + val);
                                         playSound(chimesurl);
+                                        //客户2017-08-07提出给入库单明细本次入库数量更新要放在扫描完第二个二维码后执行，不是第一个执行
+                                        cur_rec.set("ActuallyQuantity", FloatAdd(cur_rec.get("ActuallyQuantity"), quantity));
                                         array = [];//压缩机序列号扫完后将参数重置
                                         qrcode = false;
                                     }
@@ -404,7 +407,7 @@
                     //alert(val); alert(quantity);alert(skinno)
                     var index = store.findExact('Code', val);
                     cur_rec = store.getAt(index);
-                    cur_rec.set("ActuallyQuantity", FloatAdd(cur_rec.get("ActuallyQuantity"), quantity));
+                   
                     if (cur_rec.get("SkinArray")) {
                         cur_rec.set("SkinArray", cur_rec.get("SkinArray") + "#" + skinno + "@" + quantity);
                     }
