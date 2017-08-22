@@ -120,6 +120,7 @@ namespace Aim.Examining.Web
                 if (!String.IsNullOrEmpty(id))
                 {
                     ent = PriceApply.Find(id);
+                    ent.CCode = Customer.Find(ent.CId).Importance;//2017-08-22客户要求在价格申请单中显示客户等级，客户编号没有什么用，就用次属性代替客户等级
                 }
 
                 this.SetFormData(ent);

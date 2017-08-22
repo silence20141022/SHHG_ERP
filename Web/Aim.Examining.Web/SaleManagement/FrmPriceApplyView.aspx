@@ -331,7 +331,7 @@
                         <input id="CName" name="CName" disabled="disabled" />
                     </td>
                     <td class="aim-ui-td-caption" width="60px">
-                        客户编号
+                        客户等级
                     </td>
                     <td class="aim-ui-td-data">
                         <input id="CCode" name="CCode" disabled="disabled" />
@@ -345,7 +345,7 @@
                         <textarea id="Reason" name="Reason" style="width: 100%" disabled="disabled"></textarea>
                     </td>
                     <td class="aim-ui-td-caption">
-                        预计销售时间
+                        期待到货时间
                     </td>
                     <td class="aim-ui-td-data">
                         <input id="ExpectedTime" name="ExpectedTime" disabled="disabled" />
