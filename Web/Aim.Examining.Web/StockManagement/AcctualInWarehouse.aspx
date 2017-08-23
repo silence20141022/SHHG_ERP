@@ -17,6 +17,7 @@
         var qrcode = false;
         var skinno = "";
         var cur_rec;
+        var quantity;
         function onPgLoad() {
             setPgUI();
             FormValidationBind('btnSubmit', SuccessSubmit);
@@ -401,7 +402,7 @@
                     // var start=val.indexOf(')>061P');
                     var end = val.indexOf('Q', 18);//防止型号中包含字母Q
                     var end2 = val.indexOf('1J', end);
-                    var quantity = val.substring(end + 1, end2);
+                     quantity = val.substring(end + 1, end2);
                     skinno = val.substring(end2 + 2, end2 + 10);
                     val = val.substring(7, end);
                     //alert(val); alert(quantity);alert(skinno)
