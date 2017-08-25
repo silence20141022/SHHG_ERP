@@ -7,3 +7,8 @@ D:\SHHG_ERP\Framework\Aim.Resources\bin\Debug\Aim.Resources.pdb
 D:\SHHG_ERP\Framework\Aim.Resources\obj\Debug\Aim.Resources.csprojResolveAssemblyReference.cache
 D:\SHHG_ERP\Framework\Aim.Resources\obj\Debug\Aim.Resources.dll
 D:\SHHG_ERP\Framework\Aim.Resources\obj\Debug\Aim.Resources.pdb
+E:\上海宏谷\SHHG_ERP\Framework\Aim.Resources\bin\Debug\Aim.Resources.dll
+E:\上海宏谷\SHHG_ERP\Framework\Aim.Resources\bin\Debug\Aim.Resources.pdb
+E:\上海宏谷\SHHG_ERP\Framework\Aim.Resources\obj\Debug\Aim.Resources.csprojResolveAssemblyReference.cache
+E:\上海宏谷\SHHG_ERP\Framework\Aim.Resources\obj\Debug\Aim.Resources.dll
+E:\上海宏谷\SHHG_ERP\Framework\Aim.Resources\obj\Debug\Aim.Resources.pdb

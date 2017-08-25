@@ -4544,13 +4544,6 @@
       <DependentUpon>LogisticsPayEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Message\News\FrmImgNews.aspx.cs">
-      <DependentUpon>FrmImgNews.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Message\News\FrmImgNews.aspx.designer.cs">
-      <DependentUpon>FrmImgNews.aspx</DependentUpon>
-    </Compile>
     <Compile Include="BaseInfo\FrmProductDetailList.aspx.designer.cs">
       <DependentUpon>FrmProductDetailList.aspx</DependentUpon>
     </Compile>
@@ -4942,48 +4935,6 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Message\FrmImgNews.aspx.cs">
-      <DependentUpon>FrmImgNews.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Message\FrmImgNews.aspx.designer.cs">
-      <DependentUpon>FrmImgNews.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Message\FrmNoticeList.aspx.cs">
-      <DependentUpon>FrmNoticeList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Message\FrmNoticeList.aspx.designer.cs">
-      <DependentUpon>FrmNoticeList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Message\FrmNoticeView.aspx.cs">
-      <DependentUpon>FrmNoticeView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Message\FrmNoticeView.aspx.designer.cs">
-      <DependentUpon>FrmNoticeView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Message\FrmPortalEdit.aspx.cs">
-      <DependentUpon>FrmPortalEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Message\FrmPortalEdit.aspx.designer.cs">
-      <DependentUpon>FrmPortalEdit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Message\FrmMessageListView.aspx.cs">
-      <DependentUpon>FrmMessageListView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Message\FrmMessageListView.aspx.designer.cs">
-      <DependentUpon>FrmMessageListView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Message\FrmMessageDraft.aspx.cs">
-      <DependentUpon>FrmMessageDraft.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Message\FrmMessageDraft.aspx.designer.cs">
-      <DependentUpon>FrmMessageDraft.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modules\Office\SysMessageEdit.aspx.cs">
       <DependentUpon>SysMessageEdit.aspx</DependentUpon>
@@ -7441,18 +7392,6 @@
     <Content Include="LogisticsManagement\LogisticsSettlement.aspx" />
     <Content Include="LogisticsManagement\LogisticsView.aspx" />
     <Content Include="LogisticsManagement\LogisticsPayEdit.aspx" />
-    <Content Include="Message\News\FrmImgNews.aspx" />
-    <Content Include="Message\News\images\banner01.jpg" />
-    <Content Include="Message\News\images\banner02.jpg" />
-    <Content Include="Message\News\images\banner03.jpg" />
-    <Content Include="Message\News\roll\ddsmoothmenu.css" />
-    <Content Include="Message\News\roll\ddsmoothmenu.js" />
-    <Content Include="Message\News\roll\jquery-1.4.2.min.js" />
-    <Content Include="Message\News\roll\jquery.KinSlideshow-1.2.1.js" />
-    <Content Include="Message\News\roll\reset.css" />
-    <Content Include="Message\News\roll\webmain.css" />
-    <Content Include="Message\News\roll\webtry_roll.js" />
-    <Content Include="Message\News\ImgNews.html" />
     <Content Include="Modules\SysApp\MdlMag\AuthEdit.aspx" />
     <Content Include="Modules\SysApp\MdlMag\AuthGroup.aspx" />
     <Content Include="Modules\SysApp\MdlMag\AuthList.aspx" />
@@ -8385,12 +8324,6 @@
     <Content Include="js\Extjs_Intellisense.js" />
     <Content Include="js\ext\ux\FieldSet.js" />
     <Content Include="js\lib\jquery-ui.js" />
-    <Content Include="Message\FrmImgNews.aspx" />
-    <Content Include="Message\FrmNoticeList.aspx" />
-    <Content Include="Message\FrmNoticeView.aspx" />
-    <Content Include="Message\FrmPortalEdit.aspx" />
-    <Content Include="Message\FrmMessageListView.aspx" />
-    <Content Include="Message\FrmMessageDraft.aspx" />
     <Content Include="Modules\Office\calendar.htm" />
     <Content Include="Modules\Office\SysMessageEdit.aspx" />
     <Content Include="Modules\Office\SysMessageList.aspx" />

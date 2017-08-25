@@ -142,7 +142,7 @@ namespace Aim.Examining.Web
                 SetFormData(ent);
                 PageState.Add("State", ent.State);
                 //查询子商品
-                sql = "select p.Id, PId, PCode as Code, ProductId, PName as Name, c.ProductType, p.Isbn, Guids, Count,Count-(isnull(OutCount,0)) as dck, isnull(OutCount,0) as OutCount, p.Unit, p.Remark, FirstSkinIsbn," + db + ".dbo.fun_getProQuantity(ProductId) as StockQuan," + db + ".dbo.fun_getProQuantityByWarehouseId(ProductId,'" + ent.WarehouseId + "') as BenStockQuan from " + db + "..DelieryOrderPart p "
+                sql = "select p.Id, PId, PCode as Code, ProductId, PName as Name, c.ProductType, p.Isbn, Guids, Count,Count-(isnull(OutCount,0)) as dck, isnull(OutCount,0) as OutCount, p.Unit, p.Remark, FirstSkinIsbn,Count*(c.Weight) as TotalWeight," + db + ".dbo.fun_getProQuantity(ProductId) as StockQuan," + db + ".dbo.fun_getProQuantityByWarehouseId(ProductId,'" + ent.WarehouseId + "') as BenStockQuan from " + db + "..DelieryOrderPart p "
                   + " left join " + db + "..Products c on c.Id=p.ProductId  where DId='" + id + "'";
                 PageState.Add("DetailList", DataHelper.QueryDictList(sql));
             }

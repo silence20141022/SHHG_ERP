@@ -4,10 +4,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadHolder" runat="server">
 
     <script type="text/javascript">
-        var EditWinStyle = CenterWin("width=1000,height=600,scrollbars=yes");
+        var EditWinStyle = CenterWin("width=1200,height=600,scrollbars=yes");
         var EditPageUrl = "FrmDeliveryOrderEdit.aspx";
 
-        var ViewWinStyle = CenterWin("width=1000,height=600,scrollbars=yes");
+        var ViewWinStyle = CenterWin("width=1200,height=600,scrollbars=yes");
         var ViewPageUrl = "FrmDeliveryOrderEdit.aspx";
 
         var store, myData, type;

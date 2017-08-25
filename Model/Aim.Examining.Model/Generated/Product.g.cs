@@ -70,7 +70,7 @@ namespace Aim.Examining.Model
 		private string _makeArea;
 		private string _proMsgId;
 		private string _proMsg;
-		private int? _weight;
+		private decimal? _weight;
 		private string _isProxy;
 		private string _unit;
 		private string _supplierId;
@@ -441,7 +441,7 @@ namespace Aim.Examining.Model
 		}
 
 		[Property("Weight", Access = PropertyAccess.NosetterCamelcaseUnderscore)]
-		public int? Weight
+		public decimal? Weight
 		{
 			get { return _weight; }
 			set

@@ -125,7 +125,7 @@
 			    { name: 'dck' },
 			    { name: 'SmCount' },
 			    { name: 'OutCount' },
-			    { name: 'Count' },
+			    { name: 'Count' }, { name: 'TotalWeight' },
 			    { name: 'Remark' }
 			    ]
             });
@@ -154,6 +154,7 @@
                     { id: 'SmCount', header: '本次出库数量', dataIndex: 'SmCount', width: 90, resizable: true },
                     { id: 'BenStockQuan', dataIndex: 'BenStockQuan', header: '本仓存量', width: 80 },
                     { id: 'StockQuan', dataIndex: 'StockQuan', header: '库存量', width: 80 },
+                    { id: 'TotalWeight', dataIndex: 'TotalWeight', header: '重量(kg)', width: 100 },
                     { id: 'Guids', dataIndex: 'Guids', header: '唯一编号', width: 130 },
                     { id: 'Remark', header: '备注', dataIndex: 'Remark', width: 120, resizable: true }
                 ]
