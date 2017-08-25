@@ -3,30 +3,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadHolder" runat="server">
     <style type="text/css">
-        /*.x-grid3-cell-inner, .x-grid3-hd-inner
-        {
-            white-space: normal !important;
-        }
-        .x-grid3-cell-inner
-        {
-        }
-        .x-grid3-summary-row
-        {
-            background-color: #FFFFC0;
-        }
-        .x-grid3-summary-row .x-grid3-td-Ext2
-        {
-            background-color: #FFFFC0;
-        }
-        .x-grid3-td-Ext2
-        {
-            background-color: #FAFAD1;
-        }
-        .x-grid3-row-expanded
-        {
-            border-width: 1px;
-            border-color: Red;
-        }*/.x-grid-back-red
+       .x-grid-back-red
         {
             background: #FFE4E1;
         }
@@ -373,7 +350,7 @@
                         if (recs[0].get("PAState") == "不同意" || recs[0].get("PAState") == "待审核" || recs[0].get("DeliveryState") == "已作废") {
                             alert("订单对应的价格申请单审核未通过或已作废，不能生成出库单!"); return;
                         }
-                        window.open("FrmDeliveryOrderEdit3.aspx?paids=" + recs[0].get("Id") + "&op=c", "Delivery", "width=1000,height=600,scrollbars=yes");
+                        window.open("FrmDeliveryOrderEdit3.aspx?paids=" + recs[0].get("Id") + "&op=c", "Delivery", "width=1100,height=600,scrollbars=yes");
                     }
                 },
                 {
